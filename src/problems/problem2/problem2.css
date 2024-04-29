@@ -1,3 +1,10 @@
 h1 {
   color: red;
 }
+.img_currency {
+  height: 12px;
+  width: 12px;
+}
+.from_list {
+  width: 230px;
+}

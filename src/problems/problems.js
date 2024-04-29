@@ -1,6 +1,7 @@
 import "./problems.css";
 import Problem1 from "./problem1";
-import { Problem2 } from "./problem2";
+import Problem2 from "./problem2";
+import Problem3 from "./problem3";
 import { useState } from "react";
 
 export default function Problems() {
@@ -20,6 +21,9 @@ export default function Problems() {
         break;
       case "option2":
         setProblem(<Problem2 />);
+        break;
+      case "option3":
+        setProblem(<Problem3 />);
         break;
       default:
         console.log("no option choosed");

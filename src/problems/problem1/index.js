@@ -47,7 +47,7 @@ export default function Problem1() {
 
       if (containsLetter) {
         document.querySelector(".error_field").innerHTML =
-          "Vui lòng nhập dãy số nguyên";
+          "Please enter a sequence of integers.";
         methodDescription.innerHTML = "";
       } else {
         const cleanedStr = problem1Input.value.replace(
@@ -98,14 +98,15 @@ export default function Problem1() {
         }
       }
     } else {
-      errorField.innerHTML = "Vui lòng nhập dãy số nguyên";
+      errorField.innerHTML =
+        "Please enter a sequence of integers.";
     }
   }
   return (
     <form className="problem1">
       <div className="description_problem1">
-        Nhập dãy số nguyên cách nhau bởi dấu cách, dấu chấm,
-        dấu phẩy hoặc dấu chấm phẩy để tính tổng
+        Enter a series of integers separated by spaces,
+        dots, commas, or semicolons to calculate the sum.
       </div>
       <input
         placeholder="Insert here"
@@ -131,7 +132,7 @@ export default function Problem1() {
             CountSum("style1");
           }}
         >
-          Cách 1
+          Method 1
         </button>
         <button
           className="button_problem1"
@@ -141,7 +142,7 @@ export default function Problem1() {
             CountSum("style2");
           }}
         >
-          Cách 2
+          Method 2
         </button>
         <button
           className="button_problem1"
@@ -151,7 +152,7 @@ export default function Problem1() {
             CountSum("style3");
           }}
         >
-          Cách 3
+          Method 3
         </button>
       </div>
       <div className="result_problem1">
