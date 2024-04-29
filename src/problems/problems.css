@@ -1,0 +1,33 @@
+.problems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.choose_problem {
+  display: flex;
+  margin-top: 24px;
+}
+.option {
+  user-select: none;
+  transition: all 0.3s;
+  height: 24px;
+  padding: 4px 8px;
+  margin: 12px 12px 24px 12px;
+  border: 1px solid brown;
+  border-radius: 8px;
+  &:hover {
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: rgba(165, 42, 42, 0.557);
+  }
+}
+.option.choosed {
+  border: 1px solid transparent;
+  background-color: rgba(165, 42, 42, 0.557);
+}
+.problem_solving {
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+}

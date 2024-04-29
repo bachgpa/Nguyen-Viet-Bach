@@ -1,0 +1,58 @@
+.problem1 {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+}
+#problem_1_input_1st {
+  height: 32px;
+  margin-top: 24px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 8px;
+  /* box-shadow: 0 0 5px 0px #00000057; */
+  border: 1px solid rgb(205, 205, 205);
+  outline: none;
+  &:hover {
+    box-shadow: 0 0 5px 0px #64acffc3;
+  }
+  &:focus {
+    box-shadow: 0 0 5px 0px #64acffc3;
+  }
+}
+.error_field {
+  transition: all 0.3s;
+  margin: 12px 0 14px 0;
+  height: 20px;
+  color: rgb(184, 0, 0);
+}
+.button_problem1_container {
+  display: flex;
+  justify-content: space-between;
+}
+.button_problem1 {
+  transition: all 0.1s;
+  height: 40px;
+  width: 25%;
+  /* margin: 0 12px; */
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 5px 0px #00000057;
+  background-color: transparent;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 0px #0000008b;
+  }
+}
+
+.result_problem1 {
+  margin: 24px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 24px;
+}
+.description_for_method {
+  display: block;
+}
