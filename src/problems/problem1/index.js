@@ -30,7 +30,7 @@ export default function Problem1() {
     setResult(sum);
     return sum;
   }
-
+  //check array in and count sum
   function CountSum(option) {
     const problem1Input = document.querySelector(
       "#problem_1_input_1st"
@@ -40,29 +40,30 @@ export default function Problem1() {
     );
     const errorField =
       document.querySelector(".error_field");
-    if (problem1Input.value) {
-      const containsLetter = /[a-zA-Z]/.test(
-        problem1Input.value
-      );
 
-      if (containsLetter) {
-        document.querySelector(".error_field").innerHTML =
-          "Please enter a sequence of integers.";
-        methodDescription.innerHTML = "";
-      } else {
-        const cleanedStr = problem1Input.value.replace(
-          /[^\d\s.,]/g,
-          ""
-        );
-        const arr = cleanedStr.split(/[,\s.]+/);
-        const arrToSum = arr.map((item) => {
-          const num = parseFloat(item);
-          return isNaN(num) ? 0 : num;
-        });
-        switch (option) {
-          case "style1":
-            cach1(arrToSum);
-            methodDescription.innerHTML = `
+    if (
+      !problem1Input.value ||
+      /[a-zA-Z]/.test(problem1Input.value)
+    ) {
+      errorField.innerHTML =
+        "Please enter a sequence of integers.";
+      methodDescription.innerHTML = "";
+      return;
+    }
+
+    const cleanedStr = problem1Input.value.replace(
+      /[^\d\s.,]/g,
+      ""
+    );
+    const arr = cleanedStr.split(/[,\s.]+/);
+    const arrToSum = arr.map((item) => {
+      const num = parseFloat(item);
+      return isNaN(num) ? 0 : num;
+    });
+    switch (option) {
+      case "style1":
+        cach1(arrToSum);
+        methodDescription.innerHTML = `
             <div>function cach1(array) { <br>
               let sum = 0;<br>
               for (let i = 0; i < array.length; i++) {<br>
@@ -71,10 +72,10 @@ export default function Problem1() {
               setResult(sum);<br>
               return sum;<br>
             }<div>`;
-            break;
-          case "style2":
-            cach2(arrToSum);
-            methodDescription.innerHTML = `
+        break;
+      case "style2":
+        cach2(arrToSum);
+        methodDescription.innerHTML = `
             <div> const sum = array.reduce(<br>
               (accumulator, currentValue) =><br>
                 accumulator + currentValue,
@@ -82,28 +83,24 @@ export default function Problem1() {
             );<br>
             setResult(sum);<br>
             return sum;<div>`;
-            break;
-          case "style3":
-            cach3(arrToSum);
-            methodDescription.innerHTML = `
+        break;
+      case "style3":
+        cach3(arrToSum);
+        methodDescription.innerHTML = `
             <div> let sum = 0;<br>
             for (const num of array) {<br>
               sum += num;<br>
             }<br>
             setResult(sum);<br>
             return sum;<div>`;
-            break;
-          default:
-            setResult(0);
-        }
-      }
-    } else {
-      errorField.innerHTML =
-        "Please enter a sequence of integers.";
+        break;
+      default:
+        setResult(0);
     }
   }
   return (
     <form className="problem1">
+      <h1>Three ways to sum n</h1>
       <div className="description_problem1">
         Enter a series of integers separated by spaces,
         dots, commas, or semicolons to calculate the sum.

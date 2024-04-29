@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./problem2.css";
 
 export default function Problem2() {
   const [currencyData, setCurrencyData] = useState([]);
@@ -49,23 +50,28 @@ export default function Problem2() {
       setError("Currency not found");
       return;
     }
-
-    setResult(
-      (amount * toCurrencyPrice) / fromCurrencyPrice
-    );
+    const resultSwap =
+      (amount * toCurrencyPrice) / fromCurrencyPrice;
+    // resultSwap.toFixed(2)
+    setResult(resultSwap.toFixed(2));
     setError("");
   };
 
   return (
-    <div className="App">
+    <div className="problem2">
       <h1>Currency Swap Form</h1>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="fromCurrency">
+        <div className="form_group">
+          <label
+            htmlFor="fromCurrency"
+            className="form_title"
+          >
             From Currency:
           </label>
           <select
+            className="form_option"
             id="fromCurrency"
+            required
             value={fromCurrency}
             onChange={(e) =>
               setFromCurrency(e.target.value)
@@ -80,6 +86,7 @@ export default function Problem2() {
           </select>
           {fromCurrency && (
             <img
+              htmlFor="fromCurrency"
               src={
                 currencyData.find(
                   (currency) =>
@@ -90,29 +97,43 @@ export default function Problem2() {
               className="currency-icon"
             />
           )}
-          <div className="form-group">
-            <label htmlFor="amount">Amount:</label>
-            <input
-              type="number"
-              id="amount"
-              value={amount}
-              onChange={(e) =>
-                setAmount(parseFloat(e.target.value))
-              }
-            />
-          </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="toCurrency">To Currency:</label>
+        <div className="form_group">
+          <label className="form_title" htmlFor="amount">
+            Amount:
+          </label>
+          <input
+            className="form_option"
+            type="number"
+            id="amount"
+            // value={amount}
+            required
+            onChange={(e) =>
+              setAmount(parseFloat(e.target.value))
+            }
+          />
+        </div>
+        <div className="form_group">
+          <label
+            className="form_title"
+            htmlFor="toCurrency"
+          >
+            To Currency:
+          </label>
           <select
+            className="form_option"
             id="toCurrency"
             value={toCurrency}
+            required
             onChange={(e) => setToCurrency(e.target.value)}
           >
             <option value="">Select Currency</option>
             {currencyData.map((currency, index) => (
-              <option key={index} value={currency.currency}>
-                {currency.currency}
+              <option
+                key={index}
+                value={currency.currency.trim()}
+              >
+                {currency.currency.trim()}
               </option>
             ))}
           </select>
@@ -128,11 +149,15 @@ export default function Problem2() {
               className="currency-icon"
             />
           )}
-
-          <div className="result">Result: {result}</div>
+        </div>
+        <div className="form_group">
+          <div className="form_title">Result:</div>
+          <div className="form_result">{result}</div>
         </div>
 
-        <button type="submit">Swap</button>
+        <button className="submit_button" type="submit">
+          Swap
+        </button>
       </form>
       {error && <div className="error">{error}</div>}
     </div>
