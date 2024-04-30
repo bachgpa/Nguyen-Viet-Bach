@@ -51,7 +51,7 @@ export default function Problem3() {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/bachgpa/codechallanges/blob/main/src/problems/problem3/index.js"
+          href="https://github.com/bachgpa/codechallanges/blob/main/src/problems/problem3/fixedProblem3.tsx"
         >
           <span> "fixedProblem3.tsx"</span>
         </a>
