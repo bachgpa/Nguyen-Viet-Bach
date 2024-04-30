@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Nguyen-Viet-Bach/static/css/main.e663153a.css",
-    "main.js": "/Nguyen-Viet-Bach/static/js/main.ce608804.js",
+    "main.js": "/Nguyen-Viet-Bach/static/js/main.08853239.js",
     "static/js/453.fa97faa4.chunk.js": "/Nguyen-Viet-Bach/static/js/453.fa97faa4.chunk.js",
     "index.html": "/Nguyen-Viet-Bach/index.html",
     "main.e663153a.css.map": "/Nguyen-Viet-Bach/static/css/main.e663153a.css.map",
-    "main.ce608804.js.map": "/Nguyen-Viet-Bach/static/js/main.ce608804.js.map",
+    "main.08853239.js.map": "/Nguyen-Viet-Bach/static/js/main.08853239.js.map",
     "453.fa97faa4.chunk.js.map": "/Nguyen-Viet-Bach/static/js/453.fa97faa4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e663153a.css",
-    "static/js/main.ce608804.js"
+    "static/js/main.08853239.js"
   ]
 }
