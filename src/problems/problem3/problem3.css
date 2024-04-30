@@ -1,0 +1,17 @@
+.problem3 {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+.problem3 ul {
+  padding: 0;
+  margin: 0;
+}
+.problem3 ul li,
+.problem3 div {
+  display: block;
+  text-align: justify;
+  margin: 12px 0px;
+  font-size: 14px;
+}

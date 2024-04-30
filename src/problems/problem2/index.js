@@ -52,7 +52,6 @@ export default function Problem2() {
     }
     const resultSwap =
       (amount * toCurrencyPrice) / fromCurrencyPrice;
-    // resultSwap.toFixed(2)
     setResult(resultSwap.toFixed(2));
     setError("");
   };
